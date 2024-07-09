@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Landing from "./pages/landing";
 import Dashboard from "./pages/dashboard";
 import Portfolio from "./pages/portfolio";
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-      
+      <RouterProvider router={router} />
     </>
   )
 }
