@@ -5,7 +5,7 @@ const SignUp = () => {
     return (
         <div className="h-screen w-full flex justify-center items-center bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url('./images/pexels.jpg')] bg-no-repeat bg-center bg-cover">
 
-            <fieldset className="px-[3rem] pb-[3rem] pt-[3rem] rounded-2xl bg-[rgba(228,228,228,0.15)] backdrop-blur-[8px] border">
+            <fieldset className="px-[3rem] pb-[3rem] pt-[3rem] rounded-2xl bg-[rgba(234,240,240,0.15)] backdrop-blur-[3px] border">
 
                 <legend className="text-center text-white font-semibold text-[20pt]">SIGN UP</legend>
 
