@@ -1,8 +1,149 @@
+// import { Link } from 'react-router-dom';
 
-const SignIn = () => {
+// import { EnvelopeIcon, EyeSlashIcon } from '@heroicons/react/16/solid';
+// import { useForm } from "react-hook-form";
+
+// const Signin = () => {
+//     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  
+//     const onSubmit = (data) => {
+//       console.log(data);
+//     };
+//     return (
+//     <div className=" flex flex-col justify-center items-center h-screen bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url('./assets/images/pexels.jpg')] bg-no-repeat bg-center bg-cover ">
+//       <div className="leading-9 border border-white bg-white bg-opacity-10 border-opacity-30 backdrop-blur-md rounded-lg p-16 shadow-lg">
+//         <h1 className="font-bold text-[60px]">Welcome Back!</h1>
+//         <p className="text-[16px] text-black/50 text-center mb-6">
+//           Login to your dashboard
+//         </p>
+
+//         <fieldset>
+//           <form action="" className="flex flex-col gap-y-6" onSubmit={handleSubmit(onSubmit)}>
+//             <div className="flex gap-x-3 py-5 pl-3 border border-white">
+//               <EnvelopeIcon className="h-[24px] w-[24px]" />
+//               <input
+//                 className="outline-none bg-transparent"
+//                 type="text"
+//                 placeholder="Email"
+//                 {
+//                   ...register("Email", {required: "Email is required"})
+//                 }
+//               />
+//               {errors.Email && (<p className='text-red-600'>{errors.Email.message}</p>)}
+//             </div>
+
+//             <div className="flex gap-x-3 py-5 pl-3 p-8 border border-white">
+//               {/* learn how to use the eye icon when you want to view your file */}
+//               <EyeSlashIcon className="h-[24px] w-[24px]" />
+//               <input
+//                 className="outline-none bg-transparent"
+//                 type="text"
+//                 placeholder="Password"
+//               />
+//             </div>
+
+//             <div className="flex gap-x-3 px-4 py-2 bg-transparent items-center justify-between mb-4">
+//               <label className="flex items-center text-white">
+//                 <input type="checkbox" className="mr-2" /> Remember me
+//               </label>
+//               {/* <CheckSquare className="h-[24px] w-[24px]" />
+//               <p>Remember me</p> */}
+//             </div>
+
+//             <button className="bg-white py-5 px-10 rounded-tl-2xl rounded-br-2xl text-gray-800 font-semibold hover:bg-gray-200 transition">
+//               Login
+//             </button>
+
+//             <div className="flex gap-x-3 items-center">
+//               <p>Don't have an Account?</p>
+//               <Link to={'/signup'}>Sign Up</Link>
+//             </div>
+//           </form>
+//         </fieldset>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Signin;
+
+
+
+
+import { Link } from 'react-router-dom';
+import { EnvelopeIcon, EyeSlashIcon } from '@heroicons/react/16/solid';
+import { useForm } from "react-hook-form";
+
+const Signin = () => {
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
-    <div>SignIn</div>
+    <div className="flex flex-col justify-center items-center h-screen bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url('./assets/images/pexels.jpg')] bg-no-repeat bg-center bg-cover">
+      <div className="leading-9 border border-white bg-white bg-opacity-10 border-opacity-30 backdrop-blur-md rounded-lg p-8 md:p-16 shadow-lg w-full max-w-md mx-4">
+        <h1 className="font-bold text-3xl md:text-4xl text-center text-white">
+          Welcome Back!
+        </h1>
+        <p className="text-sm md:text-base text-gray-300 text-center mb-6">
+          Login to your dashboard
+        </p>
+
+          <form action="" className="flex flex-col gap-y-4 " onSubmit={handleSubmit(onSubmit)}>
+            
+            <div className="flex items-center gap-x-3 py-2 px-3 border border-white rounded-md">
+              <EnvelopeIcon className="h-6 w-6 text-white" />
+              <input
+                className="outline-none bg-transparent flex-1 text-white"
+                type="text"
+                placeholder="Email"
+                {
+                  ...register("Email", {required: "Email is required"})
+                }
+              />
+              {errors.Email && (<p className='text-red-600'>{errors.Email.message}</p>)}
+            </div>
+            
+
+            <div className="flex items-center gap-x-3 py-2 px-3 border border-white rounded-md">
+              <EyeSlashIcon className="h-6 w-6 text-white" />
+              <input
+                className="outline-none bg-transparent flex-1 text-white"
+                type="password"
+                placeholder="Password"
+                {
+                  ...register("password", {required: "Password is required", minLenght: 6})
+                }
+              />
+              {errors.Password && (<p className='text-red-600'>{errors.Password.message}</p>)}
+            </div>
+
+            <div className="flex items-center justify-between text-white mb-4">
+              <label className="flex items-center">
+                <input type="checkbox" className="mr-2" /> Remember me
+              </label>
+              <a href="#" className="hover:underline">
+                Forgot password?
+              </a>
+            </div>
+
+            <button className="bg-white py-3 px-6 rounded-tl-lg rounded-br-lg text-gray-800 font-semibold hover:bg-gray-200 transition">
+              Login
+            </button>
+
+            <div className="flex items-center justify-center mt-4 text-white">
+              <p>Don't have an account?</p>
+              <Link to="/signup" className="ml-2 underline">
+                Sign Up
+              </Link>
+            </div>
+          </form>
+     
+      </div>
+    </div>
   );
 };
 
-export default SignIn;
+export default Signin;
