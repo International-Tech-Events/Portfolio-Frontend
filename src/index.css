@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.tab-navigation {
+    font-family: Arial, sans-serif;
+}
+
+.tabs {
+    margin-top: 5px;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.tab:hover {
+    background-color: #f1f1f1;
+}
+
+.tab.active {
+    border-bottom: 3px solid #60A5FA;
+    font-weight: bold;
+    background: black;
+    color: white;
+}
+
+.tab-content {
+    padding: 20px;
+    /* background-color: #f1f1f1; */
+}
