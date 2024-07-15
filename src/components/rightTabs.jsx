@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SkillTile from './skillTile';
 
 
 
@@ -14,7 +15,7 @@ const TabNavigation = () => {
 
     return (
 
-        <div className="tab-navigation flex-[2.75] mx-[10px]">
+        <div className="tab-navigation flex-[6]">
 
             <div className="tabs">
 
@@ -45,9 +46,19 @@ const TabNavigation = () => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, laborum labore obcaecati rerum repellendus dignissimos quisquam pariatur maiores, iure facere culpa odit reprehenderit, mollitia nisi quaerat iusto aperiam. Veniam, iure?
                 </div>}
 
-                {activeTab === 'skills' && <div>
-                    Skills Content <br />
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos deserunt beatae minima maiores aliquam facilis, sint provident! Tempore sit laudantium eligendi pariatur aspernatur, animi debitis, libero, eum similique dolores exercitationem!
+                {activeTab === 'skills' && <div className='flex flex-col gap-4'>
+
+                    <div>MY SKILLS</div>
+
+                    <div className='flex flex-row flex-wrap justify-between gap-8'>
+                        <SkillTile />
+                        <SkillTile />
+                        <SkillTile />
+                        <SkillTile />
+                        <SkillTile />
+                        <SkillTile />
+                    </div>
+
                 </div>}
 
                 {activeTab === 'experiences' && <div>
