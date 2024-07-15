@@ -6,6 +6,7 @@ import SignUp from "./pages/signup";
 import SignIn from "./pages/signin";
 import BasicInfo from "./components/basicInfo";
 import TabNavigation from "./components/rightTabs";
+import SkillCard from "./components/skillTile";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     {path: '/dashboard', element: <Dashboard />},
     {path: '/basic-info', element: <BasicInfo />},
     {path: '/tabs', element: <TabNavigation />},
+    {path: '/skill-card', element: <SkillCard />},
 
   ]);
 

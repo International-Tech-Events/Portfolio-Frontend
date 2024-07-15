@@ -6,10 +6,10 @@
 
 .tab-navigation {
     font-family: Arial, sans-serif;
+    margin: 10px 20px 0 20px;
 }
 
 .tabs {
-    margin-top: 5px;
     display: flex;
     border-bottom: 1px solid #ccc;
 }
@@ -18,23 +18,40 @@
     padding: 10px 20px;
     cursor: pointer;
     border: none;
+    color: white;
     background: none;
     outline: none;
     transition: background-color 0.3s;
 }
 
 .tab:hover {
-    background-color: #f1f1f1;
+    background-color: #60A5FA;
 }
 
 .tab.active {
-    border-bottom: 3px solid #60A5FA;
+    /* border-bottom: 3px solid #60A5FA; */
     font-weight: bold;
-    background: black;
-    color: white;
+    background: #04131F;
+    color: #60A5FA;
 }
 
 .tab-content {
+    color: white;
     padding: 20px;
-    /* background-color: #f1f1f1; */
+    /* background-color: rgba(234, 240, 240, 0.15);
+    backdrop-filter: blur(3px); */
+}
+
+
+.skill-datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 250px;
+}
+
+.frosted-glass {
+    background-color: rgba(234, 240, 240, 0.15);
+    backdrop-filter: blur(3px);
 }
