@@ -6,11 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      // display: ['group-hover'],
       colors: {
         primary : "#00075F",
       }
+      
     },
   },
   plugins: [],
 }
+
+
 
