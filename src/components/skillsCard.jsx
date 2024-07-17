@@ -1,67 +1,113 @@
+// const SkillsCard = ({ skillProficiency, skillName, skillUser, percentage }) => {
+//   return (
+//     <div className="text-black shadow-lg bg-white rounded-b-lg rounded-br-lg p-6">
+//       <div>
+//         <label htmlFor="file">{skillProficiency}</label>
+//         <progress id="file" value={percentage} max="100">
+//           {percentage}%
+//         </progress>
+//       </div>
+//       <div>
+//         <div>{skillName}</div>
+//         <p>{skillUser}</p>
+//       </div>
+//     </div>
+//   );
+// };
+// export default SkillsCard;
+
+import { Download, Edit, Trash2 } from 'lucide-react';
+import Buttons from './buttons';
+
+// const SkillsCard = ({ skillName }) => {
+//   return (
+//     <div className=" text-black shadow-lg bg-white shadow-black/10 rounded-b-lg rounded-br-lg p-6 ">
+//       <div>
+//         {/* className="w-[250px] h-[350px] flex flex-col gap-[6rem] items-center pt-3 rounded-2xl bg-[#04131F] text-[#60A5FA] border" */}
+//         <p className="font-extrabold text-[18pt]">{skillName}</p>
+
+//         {/* <div className="-rotate-90"> */}
+
+//         <input
+//           type="range"
+//           name="skillName"
+//           min={'0'}
+//           max={'100'}
+//           step={'25'}
+//           list="levels"
+//           className="w-[250px]"
+//         />
+
+//         <datalist className="skill-datalist" id="levels">
+//           {/* <option className="p-0 font-semibold" value="0" label="None"></option> */}
+//           <option
+//             className="p-0 font-semibold"
+//             value="25"
+//             label="Beginner"
+//           ></option>
+//           <option
+//             className="p-0 font-semibold"
+//             value="50"
+//             label="Intermediate"
+//           ></option>
+//           <option
+//             className="p-0 font-semibold"
+//             value="75"
+//             label="Advanced"
+//           ></option>
+//           <option
+//             className="p-0 font-semibold"
+//             value="100"
+//             label="Expert"
+//           ></option>
+//         </datalist>
+//       </div>
+//     </div>
+
+//     // </div>
+//   );
+// };
+// export default SkillsCard;
+
 const SkillsCard = ({ skillName, skillUser, percentage }) => {
   return (
-    <div className=" text-black shadow-lg bg-white shadow-black/10 rounded-b-lg rounded-br-lg p-6 ">
-      <div>
-        <div>
-          {/* <label for="file">{skillProficiency}</label>
-          <progress id="file" value="32" max="100">
-            {percentage}
-          </progress> */}
-
-          <div>
-            <label for="file">Level:</label>
-            <progress id="file" value="32" max="100">
-              {percentage}
-            </progress>
+    <div className="relative text-black shadow-lg bg-white rounded-b-lg rounded-br-lg p-6">
+      <Buttons />
+      <div className="text-[20px] font-bold mb-3">{skillName}</div>
+      <div className="flex gap-5">
+        <label htmlFor={`${skillName}-range`}>Proficiency</label>
+        <div className="relative w-full">
+          <input
+            type="range"
+            name={skillName}
+            min="0"
+            max="100"
+            step="25"
+            value={percentage}
+            list="levels"
+            id={`${skillName}-range`}
+            className="w-full"
+          />
+          <datalist id="levels">
+            {/* <option value="0" label="None"></option> */}
+            <option value="25" label="Beginner"></option>
+            <option value="50" label="Intermediate"></option>
+            <option value="75" label="Advanced"></option>
+            <option value="100" label="Expert"></option>
+          </datalist>
+          <div className="relative mt-2">
+            <div className="absolute right-0 top-0 ">
+              {/* <div className="absolute right-0 top-0 transform translate-y-[-50%]"> */}
+              {percentage}%
+            </div>
           </div>
         </div>
       </div>
-
       <div>
-        <div>{skillName}</div>
+        <p>{skillUser}</p>
       </div>
-      <p>{skillUser}</p>
     </div>
   );
 };
 
 export default SkillsCard;
-{
-  /* <progress value="70" max="100">
-  70%
-</progress>; */
-}
-
-// import React, { useState, useEffect } from 'react';
-
-// const SkillsCard = ({ skillProficiency, skillName, skillUser }) => {
-//   const [loading, setLoading] = useState(true);
-
-//   // Simulate loading effect
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       setLoading(false);
-//     }, 2000); // Adjust the timeout duration as needed
-//     return () => clearTimeout(timer);
-//   }, []);
-
-//   return (
-//     <div className="max-w-xs rounded overflow-hidden shadow-lg bg-white p-6 mx-auto">
-//       {loading ? (
-//         <div className="flex justify-center items-center h-20">
-//           <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-900"></div>
-//         </div>
-//       ) : (
-//         <>
-//           <div className="font-bold text-xl mb-2">{skillName}</div>
-//           <p className="text-gray-700 text-base">
-//             Proficiency: {skillProficiency}
-//           </p>
-//           <p className="text-gray-700 text-base">User: {skillUser}</p>
-//         </>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default SkillsCard;

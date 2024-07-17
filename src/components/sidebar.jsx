@@ -87,11 +87,11 @@ import { Bars3BottomLeftIcon } from '@heroicons/react/24/solid';
 
 const Sidebar = () => {
   return (
-    <div className="min-h-[100vh] bg-primary shadow-2xl flex flex-col px-4 py-12 transition-all duration-300 hover:w-[300px] w-[60px] group">
+    <div className="min-h-[100vh] bg-primary  shadow-2xl flex flex-col px-4 py-12 transition-all duration-300 hover:w-[300px] w-[60px] group">
       {/* <div className="flex items-center mb-6"> */}
       {/* <Bars3BottomLeftIcon className="text-white pr-4 " /> */}
       <Link>
-        <span className="text-2xl text-center font-bold text-white mt-2 ml-2 hidden group-hover:block">
+        <span className="text-2xl text-center font-bold text-blue-400 mt-2 ml-2 hidden group-hover:block">
           ITE
         </span>
       </Link>
@@ -102,7 +102,7 @@ const Sidebar = () => {
           <Link
             to={link}
             key={index}
-            className="flex items-center gap-x-4 p-2 text-white hover:bg-white hover:text-primary rounded-md transition-all duration-300"
+            className="flex items-center gap-x-4 p-2 text-blue-400 hover:bg-white hover:text-primary rounded-md transition-all duration-300"
           >
             <span className="p-2 rounded-full">{icon}</span>
             <span className="ml-4 hidden group-hover:block">{text}</span>

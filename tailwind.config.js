@@ -8,7 +8,8 @@ export default {
     extend: {
       // display: ['group-hover'],
       colors: {
-        primary : "#00075F",
+        primary : "#04131F",
+        secondary: "#60A5FA"
       }
       
     },

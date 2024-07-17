@@ -12,82 +12,95 @@ const Skills = () => {
   const navigate = useNavigate();
   return (
     <>
-      <PagesLayout
-        headerText="Skills"
-        buttonText="Add new Skill"
-        onClick={() => navigate('/dashboard/skills/add')}
-      >
-        <span>All Skills here</span>
-      </PagesLayout>
+      <div className="bg-gray-500 min-h-[100%]">
+        <PagesLayout
+          headerText="Skills"
+          buttonText="Add new Skill"
+          onClick={() => navigate('/dashboard/skills/add')}
+        >
+          <span>All Skills here</span>
+        </PagesLayout>
 
-      <div className="flex flex-col gap-7 items-center justify-center my-20">
-        <div className="flex flex-row gap-11">
-          <div>
-            <SkillsImages image={html} />
+        <div className="flex flex-col gap-7 items-center justify-center mb-20">
+          <div className="flex flex-row gap-11">
+            <div>
+              <SkillsImages image={html} />
+            </div>
+            <div>
+              <SkillsImages image={css} />
+            </div>
+            <div>
+              <SkillsImages image={js} />
+            </div>
           </div>
-          <div>
-            <SkillsImages image={css} />
-          </div>
-          <div>
-            <SkillsImages image={js} />
+
+          <div className="flex flex-row gap-11">
+            <div>
+              <SkillsImages image={react} />
+            </div>
+            <div>
+              <SkillsImages image={figma} />
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-row gap-11">
-          <div>
-            <SkillsImages image={react} />
-          </div>
-          <div>
-            <SkillsImages image={figma} />
-          </div>
-        </div>
-      </div>
+        <div className="flex gap-x-10 mx-48">
+          <div className="flex-1">
+            <div className="mb-11">
+              <SkillsCard
+                skillName="HTML"
+                // skillProficiency="Advanced"
+                percentage="90"
+                skillUser="Nana"
+              />
+            </div>
 
-      <div className="flex gap-x-10 mx-48">
-        <div className="flex-1">
-          <div className="mb-11">
-            <SkillsCard
-              skillProficiency="Advanced"
-              //       <div>
-              //   <label for="file">Downloading progress:</label>
-              //   <progress id="file" value="32" max="100">
-              //     {' '}
-              //     32%{' '}
-              //   </progress>
-              // </div>
-              skillName="HTML"
-              skillUser="Nana"
-              percentage="90%"
-            />
+            <div className="mb-11">
+              <SkillsCard
+                skillName="CSS"
+                // skillProficiency="Advanced"
+                skillUser="Nana"
+                percentage="65"
+              />
+            </div>
           </div>
 
-          <div className="mb-11">
-            <SkillsCard
-              skillProficiency="Advanced"
-              skillName="CSS"
-              skillUser="Nana"
-              percentage="90%"
-            />
-          </div>
-        </div>
+          <div className="flex-1">
+            <div className="mb-11">
+              <SkillsCard
+                skillName="JavaScript"
+                // skillProficiency="Beginner"
+                skillUser="Nana"
+                percentage="30"
+              />
+            </div>
 
-        <div className="flex-1">
-          <div className="mb-11">
-            <SkillsCard
-              skillProficiency="Beginner"
-              skillName="JavaScript"
-              skillUser="Nana"
-              percentage="90%"
-            />
+            <div className="mb-11">
+              <SkillsCard
+                skillName="React"
+                // skillProficiency="Intermediate"
+                skillUser="Nana"
+                percentage="80"
+              />
+            </div>
           </div>
-
-          <div className="mb-11">
-            <SkillsCard
-              skillProficiency="Intermediate"
-              skillName="React"
-              skillUser="Nana"
-              percentage="90%"
-            />
+          <div className="flex-1">
+            <div className="mb-11 ">
+              <SkillsCard
+                skillName="Figma"
+                // skillProficiency="Intermediate"
+                skillUser="Nana"
+                percentage="70"
+              />
+            </div>
+            <div className="mb-11 ">
+              <SkillsCard
+                skillName="Figma"
+                // skillProficiency="Intermediate"
+                skillUser="Nana"
+                percentage="70"
+              />
+            </div>
           </div>
         </div>
       </div>
