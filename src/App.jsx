@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landing from './pages/landing';
-import Dashboard from './pages/dashboard';
 import Portfolio from './pages/portfolio';
 import SignUp from './pages/signup';
 import SignIn from './pages/signin';
@@ -19,7 +18,8 @@ import AddExperience from './components/addExperience';
 import AddProjects from './components/addProjects';
 import AddAchievements from './components/addAchievements';
 import AddEducation from './components/addEducation';
-import AddVolunteer from './components/addVolunteer';import BasicInfo from "./components/basicInfo";
+import AddVolunteer from './components/addVolunteer';
+import BasicInfo from "./components/basicInfo";
 import TabNavigation from "./components/rightTabs";
 import SkillCard from "./components/skillTile";
 

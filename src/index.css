@@ -6,7 +6,6 @@
 
 .tab-navigation {
     font-family: Arial, sans-serif;
-    margin: 10px 20px 0 20px;
 }
 
 .tabs {
@@ -18,8 +17,9 @@
     padding: 10px 20px;
     cursor: pointer;
     border: none;
-    color: white;
+    color: black;
     background: none;
+    font-weight: 600;
     outline: none;
     transition: background-color 0.3s;
 }
@@ -36,7 +36,7 @@
 }
 
 .tab-content {
-    color: white;
+    color: black;
     padding: 20px;
     /* background-color: rgba(234, 240, 240, 0.15);
     backdrop-filter: blur(3px); */
@@ -49,6 +49,7 @@
     justify-content: space-between;
     writing-mode: vertical-lr;
     width: 250px;
+    font-size: 10pt;
 }
 
 .frosted-glass {
