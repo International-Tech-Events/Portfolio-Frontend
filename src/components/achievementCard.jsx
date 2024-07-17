@@ -1,5 +1,6 @@
 import { Download, Edit, Trash2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Buttons from './buttons';
 
 const AchievementCard = ({
   achDate,
@@ -12,17 +13,7 @@ const AchievementCard = ({
 }) => {
   return (
     <div className="relative">
-      <div className="absolute top-0 right-0 flex space-x-2 p-2">
-        <span className="cursor-pointer">
-          <Edit className="text-gray-600 hover:text-primary " />{' '}
-        </span>
-        <span className="cursor-pointer">
-          <Download className="text-gray-600 hover:text-primary " />{' '}
-        </span>
-        <span className="cursor-pointer">
-          <Trash2 className="text-gray-600 hover:text-primary " />{' '}
-        </span>
-      </div>
+      <Buttons />
 
       <div className="flex gap-x-5">
         <span className="text-gray-600">{achDate}</span>
