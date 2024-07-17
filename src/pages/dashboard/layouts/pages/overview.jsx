@@ -103,7 +103,7 @@ const Overview = () => {
       <div className="flex flex-col flex-grow gap-6">
         {/* Experiences and Skills */}
         <div className="flex flex-col md:flex-row gap-6">
-          <div className="flex flex-col justify-between p-4 bg-slate-600 text-white rounded-lg shadow-md w-full md:w-1/3 h-40">
+          <div className="flex flex-col justify-between p-4 bg-secondary/50 text-white rounded-lg shadow-md w-full md:w-1/3 h-40">
             <div className="flex justify-between items-center">
               <MedalIcon className="h-6 w-6" />
               <span className="text-lg font-semibold">Experiences</span>
@@ -129,7 +129,7 @@ const Overview = () => {
 
         {/* Achievements, Education, and Volunteer */}
         <div className="flex flex-col md:flex-row gap-6">
-          <div className="flex flex-col justify-between p-4 bg-slate-600 text-white rounded-lg shadow-md w-full md:w-1/3 h-40">
+          <div className="flex flex-col justify-between p-4 bg-secondary/50 text-white rounded-lg shadow-md w-full md:w-1/3 h-40">
             <div className="flex justify-between items-center">
               <Award className="h-6 w-6" />
               <span className="text-lg font-semibold">Achievements</span>
@@ -150,7 +150,7 @@ const Overview = () => {
               <p>Institution: University of XYZ</p>
             </div> */}
           </div>
-          <div className="flex flex-col justify-between p-4 bg-slate-600 text-white rounded-lg shadow-md w-full md:w-1/3 h-40">
+          <div className="flex flex-col justify-between p-4 bg-secondary/50 text-white rounded-lg shadow-md w-full md:w-1/3 h-40">
             <div className="flex justify-between items-center">
               <HandHelping className="h-6 w-6" />
               <span className="text-lg font-semibold">Volunteer</span>
@@ -163,7 +163,7 @@ const Overview = () => {
         </div>
 
         {/* Projects */}
-        <div className="flex flex-col justify-between p-4 bg-slate-600 text-white rounded-lg shadow-md w-full h-40 md:h-60">
+        <div className="flex flex-col justify-between p-4 bg-secondary/50 text-white rounded-lg shadow-md w-full h-40 md:h-60">
           <div className="flex justify-between items-center">
             <FolderKanban className="h-6 w-6" />
             <span className="text-lg font-semibold">Projects</span>

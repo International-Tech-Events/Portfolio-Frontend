@@ -238,7 +238,7 @@ const UserProfile = () => {
     <div className="container mx-auto p-4">
       <PagesLayout
         headerText="Profile"
-        buttonText="Add your Profile"
+        buttonText="Add you r Profile"
         onClick={() => navigate('/dashboard/profile/add')}
       >
         <span>Your profile</span>
@@ -246,7 +246,7 @@ const UserProfile = () => {
 
       <div className="bg-white p-8 shadow-lg rounded-xl flex flex-col md:flex-row">
         {/* Left Section */}
-        <div className="md:w-1/3 p-4 flex flex-col items-center bg-primary/50 rounded-tr-[10rem]">
+        <div className="md:w-1/3 p-4 flex flex-col items-center bg-primary/50 ">
           <div className="bg-white shadow-lg shadow-black px-5 pb-16 pt-10 rounded-b-full">
             <div className="relative">
               <div className="relative h-44 w-44 bg-primary rounded-full flex items-center justify-center">
