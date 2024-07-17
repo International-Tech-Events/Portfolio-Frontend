@@ -4,6 +4,10 @@ import { useForm } from 'react-hook-form';
 import { LockClosedIcon } from '@heroicons/react/24/outline';
 import { apiSignIn } from '../services/auth';
 import { useState } from 'react';
+import Loader from '../components/loader';
+import { toast } from 'react-toastify';
+
+
 
 const Signin = () => {
 
@@ -14,7 +18,7 @@ const Signin = () => {
   const navigation = useNavigate();
 
 
-  const onSubmit = async (data) => {
+  const sendFormData = async (data) => {
 
     console.log(data);
 
@@ -23,14 +27,19 @@ const Signin = () => {
     try {
       const res = await apiSignIn({ email: data.email, password: data.password });
 
-      //redirect user if 'login' is successful
-      navigation('/dashboard');
+      localStorage.setItem("accessToken", res.data.accessToken);
+
+      toast.success(res.data.message);
 
       console.log("Response: ", res.data);
+      
+      //redirect user if 'login' is successful
+      setTimeout(() => {navigation('/dashboard')}, 5000);
     }
 
     catch (error) {
-      console.log(error)
+      console.log("An error occured!");
+      toast.error("An error occured!");
     }
 
     finally {
@@ -55,7 +64,7 @@ const Signin = () => {
         </div>
 
 
-        <form className="flex flex-col gap-y-6" onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex flex-col gap-y-6" onSubmit={handleSubmit(sendFormData)}>
 
           <div>
 
@@ -88,7 +97,7 @@ const Signin = () => {
                 className="outline-none bg-transparent"
                 type="password"
                 placeholder="password"
-                {...register('password', {required: 'password is required'})}
+                {...register('password', { required: 'password is required' })}
               />
 
             </div>
@@ -108,7 +117,7 @@ const Signin = () => {
 
 
           <button type='submit' className="bg-white py-5 px-10 text-gray-800 font-semibold hover:bg-gray-200 transition">
-            {isSubmitting ? "Loading..." : "Login"}
+            {isSubmitting ? <Loader /> : "Login"}
           </button>
 
 

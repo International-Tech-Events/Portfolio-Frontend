@@ -7,7 +7,7 @@ export const apiSignUp = async(payload) => {
 
 
 export const apiSignIn = async(payload) => {
-    return apiClient.post("/auth/login", payload);
+    return apiClient.post("/auth/token/login", payload);
 }
 
 
