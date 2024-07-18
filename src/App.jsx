@@ -19,14 +19,12 @@ import AddProjects from './components/addProjects';
 import AddAchievements from './components/addAchievements';
 import AddEducation from './components/addEducation';
 import AddVolunteer from './components/addVolunteer';
-import BasicInfo from "./components/basicInfo";
-import TabNavigation from "./components/rightTabs";
-import SkillCard from "./components/skillTile";
+
 
 
 function App() {
   const router = createBrowserRouter([
-    { path: '/', element: <Landing /> },
+    { path: '/', element: <SignIn /> },
     { path: '/signin', element: <SignIn /> },
     { path: '/signup', element: <SignUp /> },
     { path: '/portfolio', element: <Portfolio /> },

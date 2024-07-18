@@ -1,7 +1,8 @@
 import { MapPinIcon } from "@heroicons/react/24/outline";
-import { MapPin } from "lucide-react";
 
-const ExperienceTile = () => {
+
+
+const ExperienceTile = ({position, startDate, endDate, company, tasks}) => {
     return (
 
         <div className="flex flex-col ">
@@ -10,7 +11,7 @@ const ExperienceTile = () => {
 
             <div className="flex gap-3 items-center w-max">
 
-                <div className="text-[#0779E4] text-[11pt] font-sans"> <span>From_Date</span>-<span>To_Date</span> </div>
+                <div className="text-[#0779E4] text-[11pt] font-sans"> <span>startDate</span>-<span>endDate</span> </div>
 
                 <div className="flex items-center">
                     <MapPinIcon className="size-[15px] text-[#0779E4]" />
