@@ -1,7 +1,7 @@
 
-const AboutSection = () => {
+const AboutSection = ({ text }) => {
   return (
-    <div>AboutSection</div>
+    <div>{text}</div>
   );
 };
 

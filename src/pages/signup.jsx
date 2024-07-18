@@ -168,10 +168,7 @@ const SignUp = () => {
 
                             {errors.userName && (<p className="text-[14px] text-emerald-300">{errors.userName.message}</p>)}
 
-                            <div className="flex w-full justify-between">
-                                <span></span>
-                                <p id="errMsg"></p>
-                            </div>
+                            <p id="errMsg"></p>
 
                             {/* {userNameAvailable && <p className="text-lime-500">Username is available</p>}
                             {userNameNotAvailable && <p className="text-red-500">Username is NOT available</p>} */}

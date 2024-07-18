@@ -53,7 +53,7 @@ const Signin = () => {
 
     <div className=" flex flex-col justify-center items-center h-screen bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url('./images/img7.jpg')] bg-no-repeat bg-center bg-cover bg-blend-darken ">
 
-      <div className="leading-9 bg-white bg-opacity-10 border-opacity-30 backdrop-blur-md rounded-lg p-16 shadow-lg">
+      <div className="bg-white bg-opacity-10 border-opacity-30 backdrop-blur-md rounded-lg p-12">
 
         <div className="flex flex-col items-center">
 
@@ -68,9 +68,9 @@ const Signin = () => {
 
           <div>
 
-            <div className="flex gap-x-3 py-5 pl-3 border border-white">
+            <div className="flex gap-x-2 py-2 pl-2 border border-white items-center text-white">
 
-              <EnvelopeIcon className="h-[24px] w-[24px]" />
+              <EnvelopeIcon className="h-[20px] w-[20px]" />
 
               <input
                 className="outline-none bg-transparent"
@@ -88,10 +88,10 @@ const Signin = () => {
 
           <div>
 
-            <div className="flex gap-x-3 py-5 pl-3 p-8 border border-white">
+            <div className="flex gap-x-2 py-2 pl-2 border border-white items-center text-white">
 
               {/* learn how to use the eye icon when you want to view your file */}
-              <LockClosedIcon className="h-[24px] w-[24px]" />
+              <LockClosedIcon className="h-[20px] w-[20px]" />
 
               <input
                 className="outline-none bg-transparent"
@@ -107,7 +107,7 @@ const Signin = () => {
           </div>
 
 
-          <div className="flex items-center justify-between text-white mb-4">
+          <div className="flex items-center justify-between text-white mb-4 text-[8pt]">
 
             <label className="flex items-center"> <input type="checkbox" className="mr-2" /> Remember me</label>
 
@@ -116,16 +116,16 @@ const Signin = () => {
           </div>
 
 
-          <button type='submit' className="bg-white py-5 px-10 text-gray-800 font-semibold hover:bg-gray-200 transition">
+          <button type='submit' className="bg-white py-3 px-10 text-gray-800 font-semibold hover:bg-gray-200 transition">
             {isSubmitting ? <Loader /> : "Login"}
           </button>
 
 
-          <div className="flex gap-x-3 items-center text-white">
+          <div className="flex gap-x-3 items-center justify-between text-white text-[10pt]">
 
             <p>Don't have an Account?</p>
 
-            <Link to={'/signup'}>Sign Up</Link>
+            <Link to={'/signup'} className='hover:text-blue-600'>Sign Up</Link>
 
           </div>
 
