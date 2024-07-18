@@ -12,6 +12,7 @@ import {
   HandHelping,
   LayoutDashboard,
   MedalIcon,
+  Rows3,
   SearchCodeIcon,
 } from 'lucide-react';
 
@@ -61,6 +62,11 @@ const K = {
       icon: <HandHelping />,
       text: 'Volunteer',
       link: '/dashboard/volunteer',
+    },
+    {
+      icon: <Rows3 />,
+      text: 'Preview',
+      link: '/portfolio',
     },
   ],
 };

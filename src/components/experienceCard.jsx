@@ -1,4 +1,5 @@
 import { Download, Edit, Trash2 } from 'lucide-react';
+import Buttons from './buttons';
 
 const ExperienceCard = ({
   exStartDate,
@@ -23,22 +24,14 @@ const ExperienceCard = ({
 
       <div className="relative flex-grow bg-white text-black p-4 rounded-br-lg">
         <div className="absolute top-0 right-0 flex space-x-2 p-2">
-          <span className="cursor-pointer">
-            <Edit className="text-gray-600 hover:text-primary " />{' '}
-          </span>
-          <span className="cursor-pointer">
-            <Download className="text-gray-600 hover:text-primary " />{' '}
-          </span>
-          <span className="cursor-pointer">
-            <Trash2 className="text-gray-600 hover:text-primary " />{' '}
-          </span>
+          <Buttons />
         </div>
-        <h2 className="text-xl font-semibold">{exPlace}</h2>
-        <p className="text-sm italic text-gray-400">{exRole}</p>
+        <h2 className="text-3xl font-semibold">{exPlace}</h2>
+        <p className="text-lg italic text-gray-400">{exRole}</p>
 
-        <p className="text-sm mt-2">{exSkills}</p>
+        <p className="text-lg mt-2">{exSkills}</p>
 
-        <p className="text-sm mt-2">{exResponsibility}</p>
+        <p className="text-lg mt-2">{exResponsibility}</p>
 
         <p className="ext-sm italic text-gray-400">{exUser}</p>
       </div>

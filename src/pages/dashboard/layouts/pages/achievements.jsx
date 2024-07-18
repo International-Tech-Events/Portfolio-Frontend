@@ -21,10 +21,10 @@ const Achievements = () => {
             buttonText="Add new Achievements"
             onClick={() => navigate('/dashboard/achievements/add')}
           >
-            <span>Achievements list here</span>
+            {/* <span>Achievements list here</span> */}
           </PagesLayout>
         </div>
-        <div className="mx-40 mb-10">
+        <div className="mx-40 my-12">
           <div className="flex">
             <div className="flex-1 text-black shadow-lg bg-white shadow-black/55 rounded-b-lg rounded-br-lg p-6">
               <AchievementCard

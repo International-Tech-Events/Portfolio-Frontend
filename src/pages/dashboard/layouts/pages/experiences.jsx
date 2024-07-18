@@ -13,7 +13,7 @@ const Experiences = () => {
           buttonText="Add new Experience"
           onClick={() => navigate('/dashboard/experiences/add')}
         >
-          <span>Experience List here</span>
+          {/* <span>Experience List here</span> */}
         </PagesLayout>
 
         <div className=" flex gap-x-8 flex-wrap gap-y-14 min-h-auto mx-40 mt-40">
@@ -23,13 +23,13 @@ const Experiences = () => {
               exEndDate="2024"
               exPlace="Mest (Generation-Africa)"
               exRole="Web Developments"
-              exSkills="HTML, CSS, React"
+              exSkills="HTML CSS React"
               exResponsibility="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat."
               exUser="Nana"
-              dateColor="#AD8065"
+              dateColor="#60A5FA"
             />
 
             <ExperienceCard
@@ -37,12 +37,12 @@ const Experiences = () => {
               exEndDate="2024"
               exPlace="Mest (Generation-Africa)"
               exRole="Web Developments"
-              exSkills="HTML, CSS, React"
+              exSkills="HTML CSS React"
               exResponsibility="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat."
-              dateColor="#438692"
+              dateColor="#04131F"
               exUser="Nana"
             />
           </div>
@@ -53,12 +53,12 @@ const Experiences = () => {
               exEndDate="2024"
               exPlace="Mest (Generation-Africa)"
               exRole="Web Developments"
-              exSkills="HTML, CSS, React"
+              exSkills="HTML CSS React"
               exResponsibility="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat."
-              dateColor="#908BA5"
+              dateColor="#04131F"
               exUser="Nana"
             />
 
@@ -67,12 +67,12 @@ const Experiences = () => {
               exEndDate="2024"
               exPlace="Mest (Generation-Africa)"
               exRole="Web Developments"
-              exSkills="HTML, CSS, React"
+              exSkills="HTML CSS React"
               exResponsibility="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat."
-              dateColor="#A67753"
+              dateColor="#60A5FA"
               exUser="Nana"
             />
           </div>
