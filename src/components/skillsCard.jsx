@@ -17,7 +17,7 @@
 // export default SkillsCard;
 
 import { Download, Edit, Trash2 } from 'lucide-react';
-import Buttons from './buttons';
+// import Buttons from './buttons';
 
 // const SkillsCard = ({ skillName }) => {
 //   return (
@@ -72,7 +72,8 @@ import Buttons from './buttons';
 const SkillsCard = ({ skillName, skillUser, percentage }) => {
   return (
     <div className="relative text-black shadow-lg bg-white rounded-b-lg rounded-br-lg p-6">
-      <Buttons />
+      {/* <Buttons /> */}
+      <Trash2 />
       <div className="text-[20px] font-bold mb-3">{skillName}</div>
       <div className="flex gap-5">
         <label htmlFor={`${skillName}-range`}>Proficiency</label>

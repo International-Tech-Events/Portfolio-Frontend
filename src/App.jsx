@@ -20,8 +20,6 @@ import AddAchievements from './components/addAchievements';
 import AddEducation from './components/addEducation';
 import AddVolunteer from './components/addVolunteer';
 
-
-
 function App() {
   const router = createBrowserRouter([
     { path: '/', element: <SignIn /> },
