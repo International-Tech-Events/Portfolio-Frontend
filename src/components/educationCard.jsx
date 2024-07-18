@@ -9,7 +9,7 @@ const EducationCard = ({
   proDescription,
 }) => {
   return (
-    <div className="relative flex gap-x-12 px-[3rem] pb-[3rem] pt-[3rem] rounded-2xl bg-[rgba(234,240,240,0.15)] backdrop-blur-[8px]">
+    <div className="relative flex gap-x-12 px-[3rem] pb-[3rem] pt-[3rem] rounded-2xl bg-white shadow-md shadow-black">
       {/* <div className="px-6 border"> */}
       <Buttons />
       <p className="text-[1.5rem]">{schName}</p>

@@ -2,7 +2,7 @@ import { PlusCircle } from 'lucide-react';
 
 const PagesLayout = ({ headerText, buttonText, children, onClick }) => {
   return (
-    <div className="p-10 flex-col gap-y-14">
+    <div className="p-10 flex-col gap-y-14 h-auto bg-white text-primary py-6 shadow-md shadow-black">
       <div className="flex">
         <h1 className="text-3xl font-bold">{headerText}</h1>
         <button

@@ -6,7 +6,7 @@ import EducationCard from '../../../../components/educationCard';
 const Education = () => {
   const navigate = useNavigate();
   return (
-    <div className="bg-gray-500 min-h-[100%]">
+    <div className="bg-gray-500 min-h-screen">
       <PagesLayout
         headerText="Education"
         buttonText="Add new Education"
@@ -15,7 +15,7 @@ const Education = () => {
         <span>Education List here</span>
       </PagesLayout>
 
-      <div className="flex flex-col gap-y-10 mx-64 mb-10">
+      <div className="flex flex-col gap-y-10 mx-4 md:mx-16 lg:mx-64 mt-16">
         <div className="">
           <EducationCard
             schName="Generation-Mest"
