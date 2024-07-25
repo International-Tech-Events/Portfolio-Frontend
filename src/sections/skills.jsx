@@ -1,8 +1,5 @@
-
 const SkillsSection = () => {
-  return (
-    <div>SkillsSection</div>
-  );
+  return <div>SkillsSection</div>;
 };
 
 export default SkillsSection;

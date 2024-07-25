@@ -13,7 +13,7 @@ const Portfolio = () => {
               <LayoutDashboard className="size-10" />
             </div>
           </Link>
-          <h1 className="font-bold text-[2.5rem] ml-24 ">Portfolio</h1>
+          <h1 className="font-bold text-[2.5rem] ml-24 ">Techfolio</h1>
         </div>
       </div>
 

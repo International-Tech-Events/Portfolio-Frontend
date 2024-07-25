@@ -20,12 +20,20 @@ import AddAchievements from './components/addAchievements';
 import AddEducation from './components/addEducation';
 import AddVolunteer from './components/addVolunteer';
 import PreviewPage from './pages/previewPage';
+import AuthLayout from './pages/dashboard/layouts/authLayout';
+import { apiGetUserDetails } from './services/preview';
 
 function App() {
   const router = createBrowserRouter([
     { path: '/', element: <SignIn /> },
-    { path: '/signin', element: <SignIn /> },
-    { path: '/signup', element: <SignUp /> },
+    {
+      element: <AuthLayout />,
+      children: [
+        { path: '/signin', element: <SignIn /> },
+        { path: '/signup', element: <SignUp /> },
+      ],
+    },
+
     { path: '/portfolio', element: <Portfolio /> },
     { path: '/preview', element: <PreviewPage /> },
     {
@@ -44,6 +52,25 @@ function App() {
           path: 'profile/add',
           element: <AddProfile />,
         },
+        // {
+        //   path: 'preview/:username',
+        //   element: <Preview />,
+        //   loader: async ({ params }) => {
+        //     const username = params.username;
+        //     try {
+        //       const response = await apiGetUserDetails(username);
+        //       const userProfileData = response?.data.user;
+        //       return userProfileData;
+        //     } catch (error) {
+        //       toast.error('An error occured');
+        //       return null;
+        //     }
+        //   },
+        // },
+        // {
+        //   path: '*',
+        //   element: <NotFound />,
+        // },
         {
           path: 'skills',
           element: <Skills />,
