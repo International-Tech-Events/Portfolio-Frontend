@@ -19,6 +19,7 @@ import AddProjects from './components/addProjects';
 import AddAchievements from './components/addAchievements';
 import AddEducation from './components/addEducation';
 import AddVolunteer from './components/addVolunteer';
+import PreviewPage from './pages/previewPage';
 
 function App() {
   const router = createBrowserRouter([
@@ -26,6 +27,7 @@ function App() {
     { path: '/signin', element: <SignIn /> },
     { path: '/signup', element: <SignUp /> },
     { path: '/portfolio', element: <Portfolio /> },
+    { path: '/preview', element: <PreviewPage /> },
     {
       path: '/dashboard',
       element: <DashboardLayout />,
