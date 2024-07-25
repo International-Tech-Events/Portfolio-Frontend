@@ -16,7 +16,6 @@
 // };
 // export default SkillsCard;
 
-import { Download, Edit, Trash2 } from 'lucide-react';
 // import Buttons from './buttons';
 
 // const SkillsCard = ({ skillName }) => {
@@ -69,6 +68,7 @@ import { Download, Edit, Trash2 } from 'lucide-react';
 // };
 // export default SkillsCard;
 
+import { Download, Edit, Trash2 } from 'lucide-react';
 const SkillsCard = ({ skillName, skillUser, percentage }) => {
   return (
     <div className="relative text-black shadow-lg bg-white rounded-b-lg rounded-br-lg p-6">

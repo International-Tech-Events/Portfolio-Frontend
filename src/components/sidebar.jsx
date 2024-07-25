@@ -1,51 +1,66 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import K from '../pages/dashboard/layouts/navLinks';
 import { LogOut } from 'lucide-react';
-import { Bars3BottomLeftIcon } from '@heroicons/react/24/solid';
+import { apiLogout } from '../services/auth';
+import { toast } from 'react-toastify';
 
 const Sidebar = () => {
-  const location = useLocation();
+  const navigate = useNavigate();
+
+  const logout = async () => {
+    try {
+      await apiLogout();
+      toast.success('Logged out successfully');
+      navigate('/signin');
+    } catch (error) {
+      toast.error('An error occured');
+    }
+  };
 
   return (
     <div className="min-h-[100vh] bg-primary shadow-2xl flex flex-col px-4 py-12 transition-all duration-300 hover:w-[300px] w-[85px] group">
-      <Link>
-        <span className="text-2xl text-center font-bold text-blue-400 mt-2 ml-2 hidden group-hover:block">
-          ITE
-        </span>
-      </Link>
+      {/* <Link> */}
+      <span className="text-2xl text-center font-bold text-blue-400 mt-2 ml-2 hidden group-hover:block">
+        ITE
+      </span>
+      {/* </Link> */}
       <hr className="border-white w-full" />
       <div className="flex flex-col mt-6 space-y-4">
         {K.NAVLINKS.map(({ icon, text, link }, index) => (
-          <Link
+          <NavLink
             to={link}
             key={index}
-            className={`flex items-center gap-x-4 p-2 rounded-md transition-all duration-300 ${
-              location.pathname === link
-                ? 'bg-white text-primary'
-                : 'text-blue-400 hover:bg-white hover:text-primary'
-            }`}
+            // className={`flex items-center gap-x-4 p-2 rounded-md transition-all duration-300 ${
+            //   location.pathname === link
+            //     ? 'bg-white text-primary'
+            //     : 'text-blue-400 hover:bg-white hover:text-primary'
+            // }`}
+            className={({ isActive }) =>
+              `flex items-center gap-x-4 p-2 rounded-md transition-all duration-300 ${
+                (isActive,
+                location.pathname === link
+                  ? 'bg-white text-primary'
+                  : 'text-blue-400 hover:bg-white hover:text-primary')
+              }`
+            }
+            end
           >
             <span className="p-2 rounded-full">{icon}</span>
             <span className="ml-4 hidden group-hover:block">{text}</span>
-          </Link>
+          </NavLink>
         ))}
       </div>
 
-      {/* <button className="flex items-center mt-auto p-2 text-white hover:bg-white hover:text-primary rounded transition-all duration-300">
-        <div className="p-2 rounded-full">
-          <LogOut />
-        </div>
-        <span className="ml-4 hidden group-hover:block">Logout</span>
-      </button> */}
-      <Link
-        to="/signin"
+      <button
         className="flex items-center mt-auto p-2 text-white hover:bg-white hover:text-primary rounded transition-all duration-300"
+        onClick={logout}
       >
-        <div className="p-2 rounded-full">
+        <span className="p-2 rounded-full">
           <LogOut />
-        </div>
+        </span>
         <span className="ml-4 hidden group-hover:block">Logout</span>
-      </Link>
+      </button>
     </div>
   );
 };
