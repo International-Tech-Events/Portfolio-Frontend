@@ -79,7 +79,7 @@ const TabNavigation = () => {
 
                     </div>
 
-                    <a href="../simulation.pdf" download className='flex gap-2 w-max rounded px-4 py-2 bg-[#04131F] text-[#60A5FA]'> <Download /> My Resume </a>
+                    <a href="/src/files/simulation.pdf" download className='flex gap-2 w-max rounded px-4 py-2 bg-[#04131F] text-[#60A5FA]'> <Download /> My Resume </a>
 
                 </div>}
 

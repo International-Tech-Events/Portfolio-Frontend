@@ -1,28 +1,37 @@
 import { MapPinIcon } from "@heroicons/react/24/outline";
+import { Building2Icon } from "lucide-react";
 
 
 
-const ExperienceTile = ({position, startDate, endDate, company, tasks}) => {
+const ExperienceTile = ({companyName, role, responsibilities, startDate, endDate, }) => {
     return (
 
-        <div className="flex flex-col ">
+        <div className="flex gap-x-[1.5rem]">
 
-            <p className="font-bold text-[16pt]">Art & Creative Director</p>
+            <div>
+                <Building2Icon />
+            </div>
 
-            <div className="flex gap-3 items-center w-max">
 
-                <div className="text-[#0779E4] text-[11pt] font-sans"> <span>startDate</span>-<span>endDate</span> </div>
+            <div className="flex flex-col ">
 
-                <div className="flex items-center">
-                    <MapPinIcon className="size-[15px] text-[#0779E4]" />
-                    <span className="text-[rgba(0,0,0,0.5)] font-semibold text-[13pt] font-serif">Google Inc.</span>
+                <p className="font-bold text-[17pt]">{role}</p>
+
+                <div className="flex gap-3 items-center w-max">
+
+                    <div className="text-white text-[11pt] font-medium font-sans"> <span>{startDate}</span>-<span>{endDate}</span> </div>
+
+                    <div className="flex items-center">
+                        <MapPinIcon className="size-[15px] text-white" />
+                        <span className="text-[rgba(0,0,0,0.5)] font-semibold text-[13pt] font-serif">{companyName}</span>
+                    </div>
+
                 </div>
+
+                <p className="text-[rgba(0,0,0,0.5)] font-serif font-light">{responsibilities}</p>
 
             </div>
 
-            <p className="text-[rgba(0,0,0,0.5)] font-serif font-light">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos natus repellat non ducimus facere quasi vero alias laborum voluptatibus adipisci harum earum neque, possimus maxime aperiam asperiores quas omnis optio!
-            </p>
 
         </div>
     );

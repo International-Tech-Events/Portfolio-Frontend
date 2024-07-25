@@ -19,6 +19,7 @@ import AddProjects from './components/addProjects';
 import AddAchievements from './components/addAchievements';
 import AddEducation from './components/addEducation';
 import AddVolunteer from './components/addVolunteer';
+import PreviewPage from './pages/previewPage';
 import AuthLayout from './pages/dashboard/layouts/authLayout';
 import { apiGetUserDetails } from './services/preview';
 
@@ -34,6 +35,7 @@ function App() {
     },
 
     { path: '/portfolio', element: <Portfolio /> },
+    { path: '/preview', element: <PreviewPage /> },
     {
       path: '/dashboard',
       element: <DashboardLayout />,
