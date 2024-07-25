@@ -1,116 +1,159 @@
 import { useNavigate } from 'react-router-dom';
-import PagesLayout from '../pagesLayout';
-import AchievementCard from '../../../../components/achievementCard';
+import K from '../../../../constant/constants.jsx';
+import PagesLayout from '../pagesLayout.jsx';
+import { useEffect, useState } from 'react';
+import {
+  apiDeleteAchievement,
+  apiGetAchievements,
+} from '../../../../services/achievements.js';
+import noData from '../../../../images/noData.svg';
+import { Trash2 } from 'lucide-react';
+import PageLoader from '../../../../components/pageLoader.jsx';
+import Loader from '../../../../components/loader.jsx';
 
 const Achievements = () => {
   const navigate = useNavigate();
+  const [achievement, setAchievements] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
 
-  // const lineStyle = {
-  //   width: '1px',
-  //   backgroundColor: '#ccc',
-  //   margin: '10px 0',
-  //   alignSelf: 'stretch',
-  // };
+  const fetchAchievements = async () => {
+    setIsLoading(true);
+
+    try {
+      const res = await apiGetAchievements();
+      setAchievements(res.data.Achievements);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleDelete = async (_id) => {
+    setIsDeleting(true);
+    try {
+      const res = await apiDeleteAchievement(_id);
+      toast.success(res.data.message);
+    } catch (error) {
+      console.log(error);
+      toast.error('An error occured');
+    } finally {
+      setIsDeleting(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchAchievements();
+  }, []);
 
   return (
     <>
-      <div className="bg-gray-500 min-h-[100%]">
-        <div>
-          <PagesLayout
-            headerText="Achievements"
-            buttonText="Add new Achievements"
-            onClick={() => navigate('/dashboard/achievements/add')}
-          >
-            {/* <span>Achievements list here</span> */}
-          </PagesLayout>
-        </div>
-        <div className="mx-40 my-12">
-          <div className="flex">
-            <div className="flex-1 text-black shadow-lg bg-white shadow-black/55 rounded-b-lg rounded-br-lg p-6">
-              <AchievementCard
-                achDate="2024"
-                achInstitution="Mest"
-                achTitle="Ruthlicious Keto Haven"
-                achDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat."
-                achSkills="HTML CSS React"
-                theproject="https://preview.themeforest.net/item/zed-programmer-resume-portfolio-elementor-template-kit/full_screen_preview/47135920?_ga=2.62989423.1923050438.1720387898-2079034422.1719742841"
-                achUser="Nana"
-              />
-            </div>
-
-            {/* .line {
-  width: 1px;
-  background-color: #ccc;
-  margin: 10px 0;
-  align-self: stretch; */}
-
-            <div className="flex-1"></div>
+      <div className=" ">
+        <PagesLayout
+          headerText="Achievement"
+          buttonText="Add new Achievement"
+          onClick={() => navigate('/dashboard/achievements/add')}
+        />
+        {isLoading ? (
+          <PageLoader />
+        ) : (
+          <div>
+            {Achievements.length === 0 ? (
+              <div>
+                <img src={noData} alt="No Data" className="w-48 h-48" />
+                <p>No achievement added yet</p>
+              </div>
+            ) : (
+              <div className="mt-12 ">
+                {K.ACHIEVEMENTS.map((achievement, index) => {
+                  const isOdd = index % 2 !== 0;
+                  return (
+                    <div
+                      key={achievement._id}
+                      className="flex flex-col md:flex-row items-center md:items-start "
+                    >
+                      <button
+                        onClick={() => handleDelete(achievement._id)}
+                        className="absolute cursor-pointer text-gray-600 hover:text-primary"
+                      >
+                        {isDeleting ? <Loader /> : <Trash2 />}
+                      </button>
+                      {isOdd ? (
+                        <div className="hidden md:flex md:w-1/2 md:justify-end md:pr-8 text-right">
+                          <div className="max-w-md">
+                            <span className="text-gray-400">
+                              {achievement.achDate}
+                            </span>
+                            <h1 className="text-2xl font-bold mt-2">
+                              {achievement.achTitle}
+                            </h1>
+                            <h2 className="text-xl font-semibold mt-1">
+                              {achievement.achInstitution}
+                            </h2>
+                            <p className="mt-4 text-gray-300">
+                              {achievement.achDescription}
+                            </p>
+                            <p className="mt-4 font-bold">
+                              {achievement.achSkills}
+                            </p>
+                            <a
+                              href={achievement.theproject}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-500 mt-2 block"
+                            >
+                              View Project
+                            </a>
+                            <p className="mt-2">{achievement.achUser}</p>
+                          </div>
+                        </div>
+                      ) : null}
+                      <div className="md:w-1/2 flex justify-center md:justify-end mt-6 md:mt-0">
+                        <div className="flex flex-col items-center">
+                          <div className="w-3 h-3 bg-blue-500 rounded-full" />
+                          <div
+                            className={`w-1 bg-blue-500 ${
+                              isOdd ? 'h-0' : 'h-full'
+                            } md:h-full`}
+                          />
+                        </div>
+                      </div>
+                      {!isOdd ? (
+                        <div className="flex-1 md:w-1/2 md:pl-8">
+                          <span className="text-gray-400">
+                            {achievement.achDate}
+                          </span>
+                          <h1 className="text-2xl font-bold mt-2">
+                            {achievement.achTitle}
+                          </h1>
+                          <h2 className="text-xl font-semibold mt-1">
+                            {achievement.achInstitution}
+                          </h2>
+                          <p className="mt-4 text-gray-300">
+                            {achievement.achDescription}
+                          </p>
+                          <p className="mt-4 font-bold">
+                            {achievement.achSkills}
+                          </p>
+                          <a
+                            href={achievement.theproject}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-500 mt-2 block"
+                          >
+                            View Project
+                          </a>
+                          <p className="mt-2">{achievement.achUser}</p>
+                        </div>
+                      ) : null}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
-          {/* <div style={lineStyle}></div> */}
-
-          <div className="flex">
-            <div className="flex-1"></div>
-
-            <div className="flex-1 text-black shadow-lg bg-white shadow-black/55 rounded-b-lg rounded-br-lg p-6 ">
-              <AchievementCard
-                achDate="2024"
-                achInstitution="Mest"
-                achTitle="Ruthlicious Keto Haven"
-                achDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat."
-                achSkills="HTML CSS React"
-                theproject="https://preview.themeforest.net/item/zed-programmer-resume-portfolio-elementor-template-kit/full_screen_preview/47135920?_ga=2.62989423.1923050438.1720387898-2079034422.1719742841"
-                achUser="Nana"
-              />
-            </div>
-          </div>
-          {/* <div style={lineStyle}></div> */}
-
-          <div className="flex">
-            <div className="flex-1 text-black shadow-lg bg-white shadow-black/55 rounded-b-lg rounded-br-lg p-6">
-              <AchievementCard
-                achDate="2024"
-                achInstitution="Mest"
-                achTitle="Ruthlicious Keto Haven"
-                achDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat."
-                achSkills="HTML CSS React"
-                theproject="https://preview.themeforest.net/item/zed-programmer-resume-portfolio-elementor-template-kit/full_screen_preview/47135920?_ga=2.62989423.1923050438.1720387898-2079034422.1719742841"
-                achUser="Nana"
-              />
-            </div>
-
-            <div className="flex-1"></div>
-          </div>
-          {/* <div style={lineStyle}></div> */}
-
-          <div className="flex">
-            <div className="flex-1"></div>
-
-            <div className="flex-1 text-black shadow-lg bg-white shadow-black/55 rounded-b-lg rounded-br-lg p-6">
-              <AchievementCard
-                achDate="2024"
-                achInstitution="Mest"
-                achTitle="Ruthlicious Keto Haven"
-                achDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat."
-                achSkills="HTML CSS React"
-                theproject="https://preview.themeforest.net/item/zed-programmer-resume-portfolio-elementor-template-kit/full_screen_preview/47135920?_ga=2.62989423.1923050438.1720387898-2079034422.1719742841"
-                achUser="Nana"
-              />
-            </div>
-            {/* <div style={lineStyle}></div> */}
-          </div>
-        </div>
+        )}{' '}
       </div>
     </>
   );
